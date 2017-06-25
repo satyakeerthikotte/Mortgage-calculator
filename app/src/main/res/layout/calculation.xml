@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="@drawable/mortgagecalci">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--Property Info-->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/outerPropInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.9"
+            android:clickable="true"
+            android:onClick="toggle_propertyInfo"
+            android:background="@color/accent_material_dark"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/PropertyInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:clickable="true"
+                android:onClick="toggle_propertyInfo"
+                android:text="@string/PropertyInfo"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/widget_edittext_dark" />
+            <!--<ScrollView
+                android:id="@+id/svPropInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">-->
+                <LinearLayout
+                    android:id="@+id/innerPropInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--Property Type-->
+                    <LinearLayout
+                        android:id="@+id/propTypeInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/PropertyType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblPropertyType"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <Spinner
+                            android:id="@+id/ddPropertyType"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                    <!--Street Address-->
+                    <LinearLayout
+                        android:id="@+id/stAddrInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/StreetAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblStreetAddress"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/inStreetAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:inputType="textMultiLine" />
+                    </LinearLayout>
+                    <!--City-->
+                    <LinearLayout
+                        android:id="@+id/cityInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/City"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblCity"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/autocompleteCity"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <!--State-->
+                    <LinearLayout
+                        android:id="@+id/stateInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/State"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblState"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <Spinner
+                            android:id="@+id/ddState"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                    <!--ZipCode-->
+                    <LinearLayout
+                        android:id="@+id/zipCodeInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/Zipcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblZipCode"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/inZipcode"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:inputType="number" />
+                    </LinearLayout>
+                </LinearLayout>
+            <!--</ScrollView>-->
+        </LinearLayout>
+        <!--Loan Info-->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/outerLoanInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.9"
+            android:clickable="true"
+            android:onClick="toggle_LoanInfo"
+            android:background="@color/design_textinput_error_color_dark"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/LoanInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:clickable="true"
+                android:onClick="toggle_LoanInfo"
+                android:text="@string/LoanInfo"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/widget_edittext_dark" />
+           <!-- <ScrollView
+                android:id="@+id/svLoanInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">-->
+                <LinearLayout
+                    android:id="@+id/innerLoanInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--Property Price-->
+                    <LinearLayout
+                        android:id="@+id/propPriceInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/PropertyPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblPropertyPrice"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/inPropertyPrice"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:inputType="numberDecimal"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+                    <!--Down payment-->
+                    <LinearLayout
+                        android:id="@+id/downPaymentInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/DownPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblDownPayment"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/inDownPayment"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:inputType="numberDecimal"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+                    <!--APR-->
+                    <LinearLayout
+                        android:id="@+id/APRInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/APR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblAPR"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/inAPR"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:inputType="numberDecimal"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+                    <!--Terms-->
+                    <LinearLayout
+                        android:id="@+id/TermsInOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/Terms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblTerms"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/inTerms"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:inputType="numberDecimal"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+                    <!--Calculate-->
+                    <Button
+                        android:id="@+id/btnCal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:onClick="btnCalOnClick"
+                        android:text="@string/btnCalculate"
+                        android:layout_gravity="center"
+                        android:background="#54bbc2"
+                        android:textStyle="italic" />
+                    <!--Output-->
+                    <LinearLayout
+                        android:id="@+id/calculate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/outMsg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lblOutput"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <EditText
+                            android:id="@+id/output"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#1a4bae"
+                            android:editable="false"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            <!--</ScrollView>-->
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
