@@ -1,0 +1,1 @@
+Mortgage Calculator is an android application which takes the user inputs and calculates the mortgage. Also, the user could save a mortgage which is displayed on Google Maps. Saved mortgage can be edited, deleted at any point of time.
